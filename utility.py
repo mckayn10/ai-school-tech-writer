@@ -2,7 +2,7 @@ import os
 import base64
 from openai import OpenAI
 from langchain_openai import ChatOpenAI
-from langchain_core.output_parsers.string import StringOutputParser
+from langchain_core.output_parsers.string import StrOutputParser
 
 def format_data_for_openai(diffs, readme_content, commit_messages):
     prompt = None
