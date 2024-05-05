@@ -54,7 +54,7 @@ def call_openai(prompt):
         ]
 
         response = client.invoke(input=messages)
-        parser = StringOutputParser()
+        parser = StrOutputParser()
         content = parser.invoke(input=response)
 
         return content
@@ -67,9 +67,9 @@ def update_readme_and_create_pr(repo, updated_readme, readme_sha):
     commit_sha = os.getenv('COMMIT_SHA')
     main_branch = repo.get_branch('main')
     new_branch_name = f'update-readme-{commit_sha[:7]}'
-    new_branch = repo.create_git_ref(ref-f'refs/heads/{new_branch_name}', sha=main_branch.commit.sha)
+    new_branch = repo.create_git_ref(ref=f'refs/heads/{new_branch_name}', sha=main_branch.commit.sha)
 
-    repo.update_file("README.md", commit_message, updated_readme, readme_sha, branch=new_branch_name)
+    repo.update_file("README.md", commit_message, updated_readme, readme_sha, branch=new_branch)
 
     pr_title = "AI PR: Update README based on recent change"
     pr_body = "This is an AI PR. Please review the README"
