@@ -43,7 +43,7 @@ def call_openai(prompt):
         messages = [
             {
                 "role": "system",
-                "content": "You are an AI trained to help with updating README files based on commit messages and code files. If there are no changes to update, tell a joke about how I'm trying to merge a pull request with nothing important"
+                "content": "You are an AI trained to help with updating README files based on commit messages and code files."
                 
             },
             {
